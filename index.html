@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safesense Tech Services Pvt Ltd</title>
+<meta name="description" content="Structured Surveillance and Professionally Managed Offshore Operations.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#1E293B;background:#fff;line-height:1.65}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+:root{--navy:#001A3F;--accent:#0047AB;--accentH:#1a5fc8;--green:#10B981;--muted:#64748B;--border:#C8D6DD;--surface:#F4F7F9;--white:#fff;--nav-h:70px;--max:1180px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:32px}
+.sec{padding-block:96px}
+.surf{background:var(--surface)}
+.dark{background:var(--navy);color:var(--white)}
+.ey{font-family:monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.ey::before{content:'';width:26px;height:1px;background:var(--accent);flex-shrink:0}
+.eyl{color:#7ab3f0}.eyl::before{background:#7ab3f0}
+.h2{font-size:clamp(22px,3.5vw,40px);font-weight:800;line-height:1.2;color:var(--navy);margin-bottom:18px}
+.dark .h2{color:#fff}
+.lead{font-size:16px;color:var(--muted);line-height:1.8;max-width:580px}
+.dark .lead{color:#94afc4}
+.bar{width:44px;height:3px;background:var(--accent);margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border:none;border-radius:4px;font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;white-space:nowrap}
+.bb{background:var(--accent);color:#fff}
+.bb:hover{background:var(--accentH);transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,71,171,.3)}
+.bg-btn{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.bg-btn:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+/* NAV */
+.nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:200;height:var(--nav-h);width:calc(100% - 48px);max-width:calc(var(--max) + 32px);border-radius:16px;background:rgba(0,20,55,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 4px 32px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.07);transition:top .3s,width .3s,border-radius .3s,background .4s,box-shadow .4s,color .4s}
+.nav.scrolled{top:6px;width:calc(100% - 24px);border-radius:12px;background:rgba(0,15,45,.95)}
+.ni{max-width:var(--max);margin-inline:auto;padding-inline:28px;height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nl{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nl img{height:38px;width:auto;display:block}
+/* logo swap — white logo on dark nav, dark logo on light nav */
+.nav-logo{height:48px;width:auto;display:block}
+.nlt{display:flex;flex-direction:column;gap:1px}
+.nr{display:flex;align-items:center;gap:16px;flex-shrink:0}
+.nlinks{display:flex;align-items:center;gap:2px;list-style:none}
+.ndrop{position:relative}
+.ndrop-btn svg{transition:transform .25s}
+.ndrop-btn.open svg{transform:rotate(180deg)}
+.ndrop-menu{
+  display:block;visibility:hidden;opacity:0;pointer-events:none;
+  position:absolute;top:calc(100% + 12px);left:0;width:280px;
+  background:#fff;border-radius:10px;
+  box-shadow:0 16px 48px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06);
+  overflow:hidden;z-index:300;padding:6px 0;
+  transform:translateY(-8px);
+  transition:opacity .22s ease,transform .22s ease,visibility .22s ease;
+}
+.ndrop-menu.open{visibility:visible;opacity:1;pointer-events:auto;transform:translateY(0)}
+.ndrop-menu a{
+  display:flex;align-items:flex-start;gap:12px;padding:11px 16px;
+  transition:background .15s,padding-left .18s;
+  position:relative;
+}
+.ndrop-menu a::before{
+  content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:3px;height:0;background:var(--accent);border-radius:0 2px 2px 0;
+  transition:height .18s ease;
+}
+.ndrop-menu a:hover{background:var(--surface);padding-left:20px}
+.ndrop-menu a:hover::before{height:60%}
+.dm-icon{font-size:15px;flex-shrink:0;margin-top:2px}
+.dm-text{display:flex;flex-direction:column;gap:2px}
+.dm-title{font-weight:700;font-size:12px;color:var(--navy);letter-spacing:.02em;transition:color .15s}
+.ndrop-menu a:hover .dm-title{color:var(--accent)}
+.dm-sub{font-size:10.5px;color:var(--muted);line-height:1.4}
+.ndrop-div{height:1px;background:var(--border);margin:3px 0}
+.ncta{padding:9px 18px;font-size:11px}
+.burg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.mm{display:none;position:fixed;top:calc(var(--nav-h) + 20px);left:24px;right:24px;border-radius:12px;z-index:199;background:rgba(0,26,63,.98);padding:20px 32px 32px;flex-direction:column;gap:2px;max-height:calc(100vh - var(--nav-h));overflow-y:auto}
+.mm.open{display:flex}
+.mm a,.mm button.mm-drop-btn{display:flex;justify-content:space-between;align-items:center;padding:13px 0;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.72);border-bottom:1px solid rgba(255,255,255,.05);transition:color .2s;background:none;border-top:none;border-left:none;border-right:none;text-align:left;width:100%;font-family:inherit;cursor:pointer}
+.mm a:hover,.mm button.mm-drop-btn:hover{color:#fff}
+.mm-sub{display:none;flex-direction:column;padding-left:14px}
+.mm-sub.open{display:flex}
+.mm-sub a{font-size:11.5px;letter-spacing:.04em;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.03);color:rgba(255,255,255,.5);transition:color .2s,padding-left .18s}
+.mm-sub a:hover{color:#fff;padding-left:6px}
+/* NAV COLOUR STATES */
+/* DEFAULT = dark nav, white text — used on: home, about, process, ai-approach, governance, why */
+.nln{font-size:14px;font-weight:800;color:#fff;letter-spacing:.06em;text-transform:uppercase;line-height:1;white-space:nowrap;transition:color .35s}
+.nln span{color:var(--green);transition:color .35s}
+.nls{font-family:monospace;font-size:7px;letter-spacing:.16em;color:rgba(255,255,255,.36);text-transform:uppercase;white-space:nowrap;transition:color .35s}
+.nlinks>li>a,.nlinks>li>button.ndrop-btn{font-size:11.5px;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;position:relative;transition:color .35s,background .2s;padding:6px 9px;border-radius:3px;background:none;border:none;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:4px}
+.nlinks>li>a:hover,.nlinks>li>button.ndrop-btn:hover{color:#fff}
+.nlinks>li>a::after{content:'';position:absolute;bottom:0;left:9px;width:0;height:1.5px;background:var(--green);transition:width .25s}
+.nlinks>li>a:hover::after{width:calc(100% - 18px)}
+.nlinks>li>a.active{color:#fff}.nlinks>li>a.active::after{width:calc(100% - 18px)}
+.burg span{display:block;width:23px;height:1.5px;background:#fff;transition:all .3s}
+/* ON-LIGHT = white nav, dark text — used on: services, contact */
+.nav.on-light{background:rgba(255,255,255,.97) !important;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 4px 28px rgba(0,0,0,.12),0 0 0 1px rgba(0,0,0,.08)}
+.nav.on-light .nln{color:var(--navy)}
+.nav.on-light .nln span{color:var(--accent)}
+.nav.on-light .nls{color:rgba(0,26,63,.4)}
+.nav.on-light .nlinks>li>a,.nav.on-light .nlinks>li>button.ndrop-btn{color:rgba(0,26,63,.65)}
+.nav.on-light .nlinks>li>a:hover,.nav.on-light .nlinks>li>button.ndrop-btn:hover{color:var(--navy)}
+.nav.on-light .nlinks>li>a::after{background:var(--accent)}
+.nav.on-light .burg span{background:var(--navy)}
+.nav.on-light .btn.bb{background:var(--accent);color:#fff}
+/* FOOTER */
+.foot{background:#000d1f;padding-block:40px 20px}
+.ft-top{display:flex;align-items:center;justify-content:space-between;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+.ft-brand{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.fli{height:32px;object-fit:contain;display:block}
+.fb2{font-size:13px;font-weight:800;color:#fff;letter-spacing:.05em;text-transform:uppercase;line-height:1}
+.fb2 span{color:var(--green)}
+.fsu2{font-family:monospace;font-size:6.5px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.26);margin-top:2px}
+.ft-links{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.ft-links a{font-size:11.5px;color:rgba(255,255,255,.45);transition:color .2s,background .2s;padding:5px 12px;border-radius:20px;white-space:nowrap}
+.ft-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.ft-links-sep{width:1px;height:14px;background:rgba(255,255,255,.1);flex-shrink:0;margin:0 2px}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:20px}
+.fco{font-size:11px;color:rgba(255,255,255,.2)}
+.fle{display:flex;gap:4px;list-style:none}
+.fle a{font-size:11px;color:rgba(255,255,255,.2);transition:color .2s,background .2s;padding:4px 10px;border-radius:20px}
+.fle a:hover{color:rgba(255,255,255,.6);background:rgba(255,255,255,.06)}
+/* REVEAL */
+.rv{transition:opacity .7s ease,transform .7s ease}
+.rv.hidden{opacity:0;transform:translateY(28px)}
+.rv.visible{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.22s}.d3{transition-delay:.32s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+/* UNIVERSAL ACCORDION - identical style for ALL sections */
+.acc-list{display:flex;flex-direction:column;gap:10px}
+.acc-item{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff;position:relative;cursor:pointer}
+.acc-item::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,71,171,.08) 0%,transparent 65%);opacity:0;transition:opacity .4s;pointer-events:none;z-index:0}
+.acc-item:hover::before{opacity:1}
+.acc-item.dark-acc{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
+.acc-item.dark-acc::before{background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,71,171,.28) 0%,transparent 65%)}
+.acc-btn{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 22px;background:none;border:none;cursor:pointer;font-family:inherit;text-align:left;gap:14px;transition:background .25s;position:relative;z-index:1}
+.acc-btn:hover{background:rgba(0,71,171,.05)}
+.acc-item.dark-acc .acc-btn:hover{background:rgba(255,255,255,.07)}
+.acc-btn.open{background:rgba(0,71,171,.05)}
+.acc-item.dark-acc .acc-btn.open{background:rgba(255,255,255,.07)}
+.acc-left{display:flex;align-items:center;gap:14px;flex:1;min-width:0}
+.acc-icon{font-size:20px;flex-shrink:0;width:32px;text-align:center}
+.acc-title{font-size:14px;font-weight:700;color:var(--navy);line-height:1.3;flex:1;transition:color .25s}
+.acc-item.dark-acc .acc-title{color:#e2eaf0}
+.acc-btn:hover .acc-title,.acc-btn.open .acc-title{color:var(--accent)}
+.acc-item.dark-acc .acc-btn:hover .acc-title,.acc-item.dark-acc .acc-btn.open .acc-title{color:#7ab3f0}
+.acc-chevron{flex-shrink:0;color:var(--accent);transition:transform .3s,color .3s}
+.acc-item.dark-acc .acc-chevron{color:#7ab3f0}
+.acc-btn.open .acc-chevron{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .38s ease}
+.acc-body.open{max-height:900px}
+.acc-inner{padding:14px 22px 20px 68px;font-size:13.5px;color:var(--muted);line-height:1.75;border-top:1px solid var(--border);position:relative;z-index:1}
+.acc-item.dark-acc .acc-inner{color:rgba(255,255,255,.78);border-top-color:rgba(255,255,255,.1)}
+.acc-inner p{margin-bottom:10px}
+.acc-inner p:last-child{margin-bottom:0}
+.acc-inner ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:8px}
+.acc-inner ul li{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--muted);line-height:1.5}
+.acc-inner ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:5px}
+.acc-item.dark-acc .acc-inner ul li{color:rgba(255,255,255,.72)}
+.acc-item.dark-acc .acc-inner ul li::before{background:var(--green)}
+.acc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.acc-tag{background:var(--surface);border:1px solid var(--border);border-radius:3px;font-family:monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:3px 9px}
+.acc-item.dark-acc .acc-tag{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);color:rgba(217,227,232,.5)}
+.hgb{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:80px 80px}
+.hbi{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.15;pointer-events:none}
+.hsh{position:absolute;right:-60px;top:0;width:52%;height:100%;background:linear-gradient(135deg,rgba(0,71,171,.16),rgba(0,71,171,.03));clip-path:polygon(16% 0,100% 0,100% 100%,0% 100%);pointer-events:none}
+.hr1{position:absolute;right:0;bottom:0;width:320px;height:320px;border:1px solid rgba(16,185,129,.13);border-radius:50%;pointer-events:none}
+.hr2{position:absolute;right:70px;bottom:60px;width:200px;height:200px;border:1px solid rgba(16,185,129,.2);border-radius:50%;pointer-events:none}
+.hero{min-height:100vh;background:var(--navy);position:relative;display:flex;align-items:center;overflow:hidden;padding-top:var(--nav-h);padding-bottom:80px}
+.hb{position:relative;z-index:2;max-width:660px}
+.htag{display:inline-flex;align-items:center;gap:10px;background:rgba(0,71,171,.2);border:1px solid rgba(0,71,171,.38);border-radius:2px;padding:5px 13px;font-family:monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#7ab3f0;margin-bottom:28px}
+.hdot{width:6px;height:6px;border-radius:50%;background:#7ab3f0;animation:pulse 2s infinite}
+.ht{font-size:clamp(30px,5vw,60px);font-weight:800;line-height:1.1;color:#fff;letter-spacing:-.015em;margin-bottom:24px}
+.ht em{font-style:normal;color:var(--green)}
+.hs{font-size:16px;color:rgba(217,227,232,.75);line-height:1.8;margin-bottom:40px;max-width:500px}
+.ha{display:flex;gap:14px;flex-wrap:wrap}
+.hst{display:flex;margin-top:72px;border-top:1px solid rgba(255,255,255,.07);padding-top:36px}
+.hss{flex:1;text-align:center;border-right:1px solid rgba(255,255,255,.07);padding:0 20px}
+.hss:last-child{border-right:none}
+.hsn{font-size:40px;font-weight:800;color:#fff;line-height:1;margin-bottom:8px}
+.hsn span{color:var(--green)}
+.hsl{font-family:monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.ap{width:100%;aspect-ratio:969/1370;border-radius:12px;object-fit:contain;background:#f0f4f8}
+.ac{background:var(--navy);color:#fff;border-radius:12px;padding:36px;margin-top:20px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.ac::before{content:'';position:absolute;top:0;right:0;width:180px;height:180px;background:radial-gradient(circle at top right,rgba(0,71,171,.45),transparent 70%)}
+.acl{font-family:monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+.acq{font-size:16px;font-weight:700;line-height:1.5;color:#fff;margin-bottom:12px;position:relative;z-index:1}
+.acb{font-size:13px;color:rgba(255,255,255,.65);line-height:1.8;position:relative;z-index:1}
+.aps{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border-radius:12px;overflow:hidden;margin-top:48px}
+.step{background:#fff;padding:40px 32px;position:relative;transition:background .3s,box-shadow .3s;overflow:hidden;cursor:default}
+.step:hover{background:var(--surface);box-shadow:inset 0 0 60px rgba(0,71,171,.04)}
+.step::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,71,171,.07) 0%,transparent 65%);opacity:0;transition:opacity .4s;pointer-events:none}
+.step:hover::before{opacity:1}
+.sn{font-size:52px;font-weight:800;color:var(--border);line-height:1;margin-bottom:14px;transition:color .3s}
+.step:hover .sn{color:#c8d6dd}
+.sp{font-family:monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.sp::before{content:'';width:14px;height:1px;background:var(--accent)}
+.st{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:0;transition:margin .35s,color .3s}
+.step:hover .st{color:var(--accent);margin-bottom:14px}
+.sb{font-size:13px;color:var(--muted);line-height:1.75;max-height:0;overflow:hidden;opacity:0;transform:translateY(-6px);transition:max-height .4s ease,opacity .35s ease,transform .35s ease}
+.step:hover .sb{max-height:120px;opacity:1;transform:translateY(0)}
+.sb2{position:absolute;bottom:0;left:0;height:3px;background:var(--accent);width:0;transition:width .45s ease}
+.step:hover .sb2{width:100%}
+.svh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;gap:32px}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.svc-panel{border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;position:relative;transition:border-color .3s,box-shadow .3s}
+.svc-panel::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,71,171,.18) 0%,transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none;z-index:0}
+.svc-panel:hover::before{opacity:1}
+.svc-panel:hover{border-color:rgba(255,255,255,.22);box-shadow:0 8px 32px rgba(0,71,171,.14)}
+.svc-panel-text{padding:28px 28px 20px}
+.svc-badge{font-family:monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.22);padding:4px 10px;border-radius:2px;display:inline-block;margin-bottom:16px}
+.svc-badge.sec{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:rgba(217,227,232,.6)}
+.svc-icon{width:42px;height:42px;background:rgba(0,71,171,.25);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px}
+.svc-title{font-size:20px;font-weight:800;color:#fff;margin-bottom:8px}
+.svc-lead{font-size:13px;color:rgba(217,227,232,.6);line-height:1.7;margin-bottom:20px}
+.svc-img{width:100%;height:auto;display:block;border-radius:6px;object-fit:contain}
+.ai-img{width:100%;height:auto;display:block;border-radius:6px;object-fit:contain}
+.gg{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.gp{background:var(--navy);border-radius:12px;padding:40px;position:relative;overflow:hidden;transition:box-shadow .3s}
+.gp::after{content:'';position:absolute;top:-50px;right:-50px;width:220px;height:220px;border:1px solid rgba(16,185,129,.14);border-radius:50%;pointer-events:none}
+.gp::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,71,171,.32) 0%,transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none;z-index:0}
+.gp:hover::before{opacity:1}
+.gp:hover{box-shadow:0 8px 32px rgba(0,71,171,.18)}
+.gpl{font-family:monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:24px;position:relative;z-index:1}
+.gr{border-bottom:1px solid rgba(255,255,255,.07);padding:16px 0;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;transition:padding-left .2s}
+.gr:hover{padding-left:6px}
+.gr:last-of-type{border-bottom:none}
+.grl{font-size:13px;color:rgba(255,255,255,.56)}
+.grv{font-size:14px;font-weight:700;color:#fff}
+.grv span{color:var(--green)}
+.gn{margin-top:24px;padding:14px 16px;background:rgba(0,71,171,.15);border-radius:4px;border:1px solid rgba(0,71,171,.25);font-size:12px;color:rgba(255,255,255,.5);line-height:1.7;position:relative;z-index:1}
+.cg{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}
+.ct{font-size:clamp(22px,3.2vw,32px);font-weight:800;color:#fff;line-height:1.25;margin-bottom:16px}
+.cl{font-size:14px;color:rgba(217,227,232,.62);line-height:1.8;margin-bottom:32px}
+.cd{display:flex;flex-direction:column;gap:16px}
+.cdi{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;transition:background .2s,padding-left .2s;cursor:default}
+.cdi:hover{background:rgba(255,255,255,.05);padding-left:18px}
+.cico{width:36px;height:36px;background:rgba(0,71,171,.3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.cla{font-family:monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:2px}
+.cva{font-size:14px;color:rgba(255,255,255,.78);font-weight:500}
+.fb{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:36px;position:relative;overflow:hidden;transition:border-color .3s}
+.fb::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,71,171,.22) 0%,transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none;z-index:0}
+.fb:hover::before{opacity:1}
+.fb:hover{border-color:rgba(255,255,255,.16)}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{margin-bottom:16px}
+.fla{display:block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(217,227,232,.5);margin-bottom:6px}
+.fi,.fsel,.fta{width:100%;padding:11px 13px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px;color:#fff;font-family:inherit;font-size:13px;transition:border-color .2s;outline:none}
+.fi::placeholder,.fta::placeholder{color:rgba(255,255,255,.2)}
+.fi:focus,.fsel:focus,.fta:focus{border-color:var(--accent);background:rgba(0,71,171,.08)}
+.fsel option{background:var(--navy)}
+.fta{resize:vertical;min-height:100px}
+.fsubm{width:100%;padding:13px;font-size:13px;letter-spacing:.07em}
+.fno{text-align:center;margin-top:10px;font-size:11px;color:rgba(255,255,255,.26)}
+.fprivacy{text-align:center;margin-top:7px;font-size:10.5px;color:rgba(255,255,255,.2);line-height:1.6}
+.fprivacy a{color:rgba(255,255,255,.38);text-decoration:underline}
+.fsu{display:none;text-align:center;padding:40px 20px}
+.fsu.show{display:block}
+.fsui{font-size:40px;margin-bottom:12px}
+.fsut{font-size:20px;font-weight:800;color:#fff;margin-bottom:8px}
+.fsub{font-size:13px;color:rgba(217,227,232,.55)}
+@media(max-width:1080px){.nlt{display:none}.svc-grid{grid-template-columns:1fr}}
+@media(max-width:900px){:root{--nav-h:64px}.sec{padding-block:64px}.nlinks,.ncta{display:none}.nlt{display:flex}.burg{display:flex}.nav{top:8px;width:calc(100% - 24px);border-radius:12px}.ag,.gg,.cg{grid-template-columns:1fr;gap:32px}.aps{grid-template-columns:1fr}.svh{flex-direction:column;align-items:flex-start}}
+@media(max-width:560px){.wrap{padding-inline:16px}.fb{padding:20px 16px}.fr{grid-template-columns:1fr}.hst{flex-wrap:wrap}.hss{flex:1 1 100px}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="ni">
+    <a href="index.html" class="nl">
+      <img src="logo W.png" alt="Safesense Tech" id="navLogo" class="nav-logo">
+      <div class="nlt"><span class="nln">Safesense Tech</span><span class="nls">Services Pvt Ltd</span></div>
+    </a>
+    <div class="nr">
+      <ul class="nlinks">
+        <li><a href="index.html#about">About</a></li>
+        <li class="ndrop" id="svcDrop">
+          <button class="ndrop-btn" id="svcBtn" aria-expanded="false">Services <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="ndrop-menu" id="svcMenu">
+            <a href="index.html#services"><span class="dm-icon">&#127959;&#65039;</span><span class="dm-text"><span class="dm-title">Managed Service Delivery</span><span class="dm-sub">Finance, Compliance, Admin, Healthcare</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="index.html#services"><span class="dm-icon">&#128225;</span><span class="dm-text"><span class="dm-title">Surveillance &amp; Monitoring</span><span class="dm-sub">24/7 Control Room &amp; Escalation</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="index.html#services"><span class="dm-icon">&#128200;</span><span class="dm-text"><span class="dm-title">Finance &amp; Revenue Ops</span><span class="dm-sub">Offshore financial process management</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="index.html#services"><span class="dm-icon">&#128203;</span><span class="dm-text"><span class="dm-title">Compliance &amp; Documentation</span><span class="dm-sub">Regulated environment specialists</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="index.html#services"><span class="dm-icon">&#127973;</span><span class="dm-text"><span class="dm-title">Healthcare Revenue Cycle</span><span class="dm-sub">Specialised RCM management</span></span></a>
+          </div>
+        </li>
+        <li class="ndrop" id="indDrop">
+          <button class="ndrop-btn" id="indBtn" aria-expanded="false">Industries <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="ndrop-menu" id="indMenu">
+            <a href="industries.html#fin"><span class="dm-icon">&#127970;</span><span class="dm-text"><span class="dm-title">Financial Services &amp; FinTech</span><span class="dm-sub">Revenue ops, compliance, admin</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="industries.html#hc"><span class="dm-icon">&#127973;</span><span class="dm-text"><span class="dm-title">Healthcare Practices</span><span class="dm-sub">RCM, documentation, admin</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="industries.html#ps"><span class="dm-icon">&#128188;</span><span class="dm-text"><span class="dm-title">Professional Services</span><span class="dm-sub">Back-office &amp; support operations</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="industries.html#sec"><span class="dm-icon">&#128737;&#65039;</span><span class="dm-text"><span class="dm-title">Security &amp; Infrastructure</span><span class="dm-sub">Surveillance &amp; remote monitoring</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="industries.html#ec"><span class="dm-icon">&#128230;</span><span class="dm-text"><span class="dm-title">E-Commerce &amp; Growth Ventures</span><span class="dm-sub">Scalable offshore operations</span></span></a>
+          </div>
+        </li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="index.html#why">Why Us</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn bb ncta">Begin Transition</a>
+      <button class="burg" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<nav class="mm" id="mm">
+  <a href="index.html#about">About</a>
+  <button class="mm-drop-btn">Services <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+  <div class="mm-sub">
+    <a href="index.html#services">Managed Service Delivery</a>
+    <a href="index.html#services">Surveillance &amp; Monitoring</a>
+    <a href="index.html#services">Finance &amp; Revenue Ops</a>
+    <a href="index.html#services">Compliance &amp; Documentation</a>
+    <a href="index.html#services">Healthcare Revenue Cycle</a>
+  </div>
+  <button class="mm-drop-btn">Industries <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+  <div class="mm-sub">
+    <a href="industries.html#fin">Financial Services &amp; FinTech</a>
+    <a href="industries.html#hc">Healthcare Practices</a>
+    <a href="industries.html#ps">Professional Services</a>
+    <a href="industries.html#sec">Security &amp; Infrastructure</a>
+    <a href="industries.html#ec">E-Commerce &amp; Growth</a>
+  </div>
+  <a href="team.html">Team</a>
+  <a href="index.html#why">Why Us</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+<section class="hero" id="home">
+  <div class="hgb"></div><img class="hbi" src="surveillance.jpg" alt=""><div class="hsh"></div><div class="hr1"></div><div class="hr2"></div>
+  <div class="wrap"><div class="hb" style="animation:fadeUp .8s ease both">
+    <div class="htag"><span class="hdot"></span>Structured Surveillance &amp; Managed Offshore Operations</div>
+    <h1 class="ht">Structured Surveillance.<br><em>Professionally Managed</em><br>Offshore Operations.</h1>
+    <p class="hs">Operational environments built for clarity, control, and measurable performance.</p>
+    <div class="ha"><a href="#services" class="btn bb">Explore Services</a><a href="#contact" class="btn bg-btn">Begin Your Transition</a></div>
+    <div class="hst" style="animation:fadeUp .8s .3s ease both">
+      <div class="hss"><div class="hsn">24<span>/7</span></div><div class="hsl">Surveillance</div></div>
+      <div class="hss"><div class="hsn">100<span>%</span></div><div class="hsl">Governed Delivery</div></div>
+      <div class="hss"><div class="hsn">5<span>+</span></div><div class="hsl">Sectors Served</div></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec" id="about" style="padding-top:128px">
+  <div class="wrap"><div class="ag">
+    <div class="rv">
+      <img src="CEO - about .jpg" alt="Safesense Tech" class="ap">
+      <div class="ac">
+        <div class="acl">// Our Foundation</div>
+        <p class="acq">"Operational performance at Safesense Tech is engineered — not incidental."</p>
+        <p class="acb">Every engagement begins with structured visibility through defined KPIs, measurable outputs, and documented service frameworks. Governance is embedded into execution via structured Statements of Work, transition methodologies, and role-based accountability.</p>
+      </div>
+    </div>
+    <div class="rv d1">
+      <div class="ey">Who We Are</div>
+      <h2 class="h2">Operations-Focused. Governance-Led. Measurably Delivered.</h2>
+      <div class="bar"></div>
+      <p class="lead">Safesense Tech Services Pvt Ltd is an operations-focused services organisation built on discipline, governance, and measurable performance. Established through structured surveillance and control-room environments, we developed our foundation in precision monitoring, escalation management, and operational accountability.</p>
+      <div class="acc-list" style="margin-top:28px" data-acc-group="pillars">
+<div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'pillars')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128208;</span><span class="acc-title">Structured Visibility</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Defined KPIs and measurable outputs from day one of every engagement — leadership has full visibility without micromanagement.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'pillars')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128274;</span><span class="acc-title">Governance Embedded</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Governance built into execution through documented SOPs, structured Statements of Work, and role-based accountability.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'pillars')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#9881;&#65039;</span><span class="acc-title">Technology-Supported</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Technology enhances delivery — qualified professionals remain accountable for every critical output.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'pillars')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128065;&#65039;</span><span class="acc-title">Professional Oversight</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Expert review applied at every tier of every client engagement, not as an afterthought.</p></div></div>
+</div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec surf" id="process">
+  <div class="wrap">
+    <div class="rv">
+      <div class="ey">Our Approach</div>
+      <h2 class="h2">The MSD Continuous Improvement Model</h2>
+      <p class="lead">A three-phase delivery framework built for sustainable, measurable performance.</p>
+    </div>
+    <div class="aps rv d1">
+      <div class="step"><div class="sn">01</div><div class="sp">Phase One</div><h3 class="st">Monitor</h3><p class="sb">Structured visibility through defined KPIs, reporting dashboards, and measurable controls ensuring leadership transparency.</p><div class="sb2"></div></div>
+      <div class="step"><div class="sn">02</div><div class="sp">Phase Two</div><h3 class="st">Stabilize</h3><p class="sb">Governance-led execution supported by documented SOPs, escalation protocols, role-based accountability, and continuity safeguards.</p><div class="sb2"></div></div>
+      <div class="step"><div class="sn">03</div><div class="sp">Phase Three</div><h3 class="st">Drive</h3><p class="sb">Controlled performance refinement through workflow enhancements and professional validation of all critical outputs.</p><div class="sb2"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark" id="services">
+  <div class="wrap">
+    <div class="svh rv">
+      <div>
+        <div class="ey eyl">What We Offer</div>
+        <h2 class="h2">Two Operational Divisions.<br>One Standard of Excellence.</h2>
+      </div>
+      <p class="lead" style="max-width:340px;flex-shrink:0">Structured service delivery spanning professionally managed offshore operations and foundational surveillance environments.</p>
+    </div>
+    <div class="svc-grid rv d1">
+      <div class="svc-panel">
+        <div class="svc-panel-text">
+          <div class="svc-badge">Primary Division</div>
+          <div class="svc-icon">&#127959;&#65039;</div>
+          <div class="svc-title">Managed Service Delivery (MSD)</div>
+          <p class="svc-lead">Structured offshore operational environments designed for clarity, control, and measurable performance. Each service line is governed by documented frameworks and managed by accountable professionals.</p>
+          <img src="MSD.jpg" alt="Managed Service Delivery" class="svc-img">
+        </div>
+        <div class="acc-list" style="padding:16px;background:rgba(255,255,255,.02)" data-acc-group="msd">
+<div class="acc-item dark-acc">
+  <button class="acc-btn" onclick="toggleAcc(this,'msd')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128200;</span><span class="acc-title">Finance &amp; Revenue Operations</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Offshore financial process management for growth-oriented businesses — AP/AR, reconciliation, revenue reporting, and financial back-office under governed SLAs.</p></div></div>
+</div><div class="acc-item dark-acc">
+  <button class="acc-btn" onclick="toggleAcc(this,'msd')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128203;</span><span class="acc-title">Compliance &amp; Documentation Operations</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Regulated document management with governance embedded throughout — version control, role-based access, and structured review protocols.</p></div></div>
+</div><div class="acc-item dark-acc">
+  <button class="acc-btn" onclick="toggleAcc(this,'msd')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128188;</span><span class="acc-title">Business Support &amp; Administrative Operations</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Scalable back-office support — scheduling, data entry, correspondence, and workflow coordination governed by documented SOPs.</p></div></div>
+</div><div class="acc-item dark-acc">
+  <button class="acc-btn" onclick="toggleAcc(this,'msd')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#127973;</span><span class="acc-title">Healthcare Revenue Cycle Management</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Full billing lifecycle management — eligibility verification, claims submission, payment posting, and denial management under professional oversight.</p></div></div>
+</div>
+        </div>
+        <div style="padding:0 20px 24px"><a href="#contact" class="btn bb" style="width:100%;justify-content:center">Enquire About MSD &rarr;</a></div>
+      </div>
+      <div class="svc-panel">
+        <div class="svc-panel-text">
+          <div style="font-family:monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(217,227,232,.6);margin-bottom:16px">Foundational Division</div>
+          <div class="svc-icon">&#128225;</div>
+          <div class="svc-title">Surveillance &amp; Remote Monitoring</div>
+          <p class="svc-lead">Structured monitoring environments built for operational control, real-time visibility, and disciplined escalation management. The operational foundation upon which Safesense Tech was built.</p>
+          <img src="surveillance.jpg" alt="surveillance" class="svc-img">
+        </div>
+        <div class="acc-list" style="padding:16px;background:rgba(255,255,255,.02)" data-acc-group="surv">
+<div class="acc-item dark-acc">
+  <button class="acc-btn" onclick="toggleAcc(this,'surv')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128250;</span><span class="acc-title">24/7 E-Surveillance Monitoring</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Round-the-clock real-time monitoring with defined escalation protocols — every event detected, logged, and actioned within agreed response timeframes.</p></div></div>
+</div><div class="acc-item dark-acc">
+  <button class="acc-btn" onclick="toggleAcc(this,'surv')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128225;</span><span class="acc-title">Alarm &amp; Event Monitoring</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Structured alarm management with tiered escalation — every alert categorised, prioritised, and responded to with full audit trail maintained.</p></div></div>
+</div><div class="acc-item dark-acc">
+  <button class="acc-btn" onclick="toggleAcc(this,'surv')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128196;</span><span class="acc-title">Control Room Operations</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Professionally staffed centralised control rooms with shift protocols, documented handover procedures, and management review at every cycle.</p></div></div>
+</div><div class="acc-item dark-acc">
+  <button class="acc-btn" onclick="toggleAcc(this,'surv')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128314;</span><span class="acc-title">Incident Reporting &amp; Escalation Management</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>End-to-end incident documentation with pre-defined escalation matrices — from detection through resolution with timestamped stakeholder reporting.</p></div></div>
+</div>
+        </div>
+        <div style="padding:0 20px 24px"><a href="#contact" class="btn bb" style="width:100%;justify-content:center">Enquire About Monitoring &rarr;</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec surf" id="ai-approach">
+  <div class="wrap"><div class="gg">
+    <div class="rv">
+      <div class="ey">Our AI Philosophy</div>
+      <h2 class="h2">Right AI. Right Requirement. Humans in Control.</h2>
+      <div class="bar"></div>
+      <p class="lead" style="margin-bottom:24px">We identify the right AI for each operational requirement and deploy it within structured, human-led frameworks. Every output is monitored, validated, and owned by a qualified professional before it reaches your operation.</p>
+      <p class="lead" style="margin-bottom:28px">AI drives the pace. Our people govern the outcome.</p>
+      <div class="acc-list" data-acc-group="ai">
+<div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'ai')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128268;</span><span class="acc-title">Precision AI Selection</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>We identify the right AI for each specific requirement — evaluated on operational fit, security posture, and measurable output quality. The decision is always driven by what works for your operation, not by platform preference.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'ai')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128100;</span><span class="acc-title">People Govern Every Output</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Every AI-assisted workflow is structured with a defined human review layer — qualified professionals validate outputs before they enter your operation.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'ai')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128202;</span><span class="acc-title">Continuous AI Performance Monitoring</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>We do not set and forget. AI outputs are tracked against defined quality benchmarks with structured review cycles to ensure consistent performance and flag drift before it reaches your workflow.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'ai')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128274;</span><span class="acc-title">Governance-Compliant AI Integration</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>AI adoption is mapped to your existing compliance and data-handling frameworks — every integration is documented, access-controlled, and auditable from day one.</p></div></div>
+</div>
+      </div>
+    </div>
+    <div class="rv d1" style="display:flex;flex-direction:column;gap:20px">
+      
+        <img src="AI n human.png" alt="Managed Service Delivery" class="svc-img ai-img">
+    
+      </div>
+      <div class="ac" style="margin-top:0">
+        <div class="acl">// Our AI Position</div>
+        <p class="acq">"We deploy AI where it performs. We place people where it matters."</p>
+        <p class="acb">AI is a precision instrument inside a governed workflow — identified for each requirement, deployed with structure, and accountable at every step.</p>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec" id="governance">
+  <div class="wrap"><div class="gg">
+    <div class="rv">
+      <div class="ey">Governance &amp; Data Security</div>
+      <h2 class="h2">Governance &amp; Data Security Embedded in Every Engagement</h2>
+      <div class="bar"></div>
+      <p class="lead" style="margin-bottom:28px">Governance is embedded into Safesense Tech delivery environments through documented procedures, structured oversight, and measurable performance controls.</p>
+      <div class="acc-list" data-acc-group="gov">
+<div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'gov')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128272;</span><span class="acc-title">Role-Based Access Controls</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Strict role-defined access management at every operational tier — access is granted by function, not by individual, with full audit logging.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'gov')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#127760;</span><span class="acc-title">Secure System Access Management</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Controlled, auditable access across all operational systems — every login, action, and data interaction is traceable and reviewable.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'gov')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128203;</span><span class="acc-title">Defined Data Handling Protocols</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Documented procedures covering every data touchpoint — from receipt through processing, storage, and disposal in your operation.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'gov')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128314;</span><span class="acc-title">Escalation Matrices &amp; Risk Mitigation</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Pre-defined escalation paths and risk frameworks for every engagement — no ambiguity when an issue arises.</p></div></div>
+</div>
+      </div>
+    </div>
+    <div class="gp rv d1">
+      <div class="gpl">// Delivery Standards</div>
+      <div class="gr"><span class="grl">Governance Embedded in Delivery</span><span class="grv">&#10004; <span>Active</span></span></div>
+      <div class="gr"><span class="grl">Visibility Without Micromanagement</span><span class="grv">&#10004; <span>Active</span></span></div>
+      <div class="gr"><span class="grl">Professional Oversight</span><span class="grv">&#10004; <span>Active</span></span></div>
+      <div class="gr"><span class="grl">Controlled Transition Methodology</span><span class="grv">&#10004; <span>Active</span></span></div>
+      <div class="gr"><span class="grl">Documentation-Intensive Ready</span><span class="grv">&#10004; <span>Active</span></span></div>
+      <div class="gr"><span class="grl">Institutional Stability</span><span class="grv">&#10004; <span>Active</span></span></div>
+      <div class="gn">Enhanced governance controls are applied for regulated and documentation-intensive sectors.</div>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec surf" id="why">
+  <div class="wrap">
+    <div style="max-width:600px;margin-bottom:44px" class="rv">
+      <div class="ey">Why Choose Safesense Tech</div>
+      <h2 class="h2">Built Different. Delivered with Discipline.</h2>
+      <p class="lead">Six structural advantages that distinguish Safesense Tech from conventional service providers.</p>
+    </div>
+    <div class="acc-list rv d1" data-acc-group="why">
+<div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'why')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#9989;</span><span class="acc-title">Governance Embedded in Delivery</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Defined SOPs and measurable accountability from day one — governance is part of the delivery model, not applied after the fact.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'why')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128200;</span><span class="acc-title">Visibility Without Micromanagement</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Structured reporting and KPI dashboards give leadership clarity without requiring constant oversight of day-to-day operations.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'why')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128065;&#65039;</span><span class="acc-title">Professional Oversight</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Qualified professionals validate all critical outputs — every tier of delivery has an accountable owner.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'why')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128260;</span><span class="acc-title">Controlled Transition Methodology</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Stabilisation before scale — every onboarding follows a structured transition to ensure operational continuity from day one.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'why')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128203;</span><span class="acc-title">Designed for Documentation-Intensive Environments</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>Purpose-built for regulated, compliance-heavy sectors — our frameworks meet the standards expected in finance, healthcare, and legal.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'why')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#127963;&#65039;</span><span class="acc-title">Institutional Stability with Growth Orientation</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>The discipline of an institution with the agility to support rapid growth — structured operations that scale without breaking.</p></div></div>
+</div><div class="acc-item">
+  <button class="acc-btn" onclick="toggleAcc(this,'why')" aria-expanded="false">
+    <span class="acc-left"><span class="acc-icon">&#128268;</span><span class="acc-title">AI Identified for Each Requirement, Deployed with Humans</span></span>
+    <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="acc-body"><div class="acc-inner"><p>We identify the right AI for each operational requirement and deploy it within a human-led framework — every output monitored, validated, and owned by a qualified professional before it reaches your operation.</p></div></div>
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark" id="contact">
+  <div class="wrap"><div class="cg">
+    <div class="rv">
+      <div class="ey eyl">Begin Your Transition</div>
+      <h2 class="ct">Ready to Build a Governed Operating Environment?</h2>
+      <p class="cl">Safesense Tech delivers structured surveillance and professionally managed service environments designed to support measurable growth.</p>
+      <div class="cd">
+        <div class="cdi"><div class="cico">&#128222;</div><div><div class="cla">Phone</div><div class="cva"><a href="tel:+919876543210" style="color:inherit">+91 98765 43210</a></div></div></div>
+        <div class="cdi"><div class="cico">&#128231;</div><div><div class="cla">Email</div><div class="cva"><a href="/cdn-cgi/l/email-protection#f199949d9d9eb18290979482949f829485949299df929e9c" style="color:inherit"><span class="__cf_email__" data-cfemail="29414c454546695a484f4c5a4c475a4c5d4c4a41074a4644">[email&#160;protected]</span></a></div></div></div>
+        <div class="cdi"><div class="cico">&#128205;</div><div><div class="cla">Operations</div><div class="cva">India &mdash; Offshore Managed Services</div></div></div>
+        <div class="cdi"><div class="cico">&#128336;</div><div><div class="cla">Availability</div><div class="cva">24/7 Surveillance Operations</div></div></div>
+      </div>
+      <div style="margin-top:28px; border-radius:12px; overflow:hidden; width:100%; height:250px; border:1px solid rgba(255,255,255,0.1);">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.3192436150207!2d72.87654950000001!3d19.2684784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b19c90b512a3%3A0x3c86017d96f2780!2sSafesense%20Tech%20Services%20Private%20Limited!5e0!3m2!1sen!2sin!4v1773227090326!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">" 
+    width="100%" 
+    height="100%" 
+    style="border:0; filter: grayscale(0.5) contrast(1.2) opacity(0.8);" 
+    allowfullscreen="" 
+    loading="lazy">
+  </iframe>
+</div>
+    </div>
+    <div class="rv d1">
+      <div class="fb">
+        <form id="theForm" novalidate>
+          <div class="fr">
+            <div class="fg"><label class="fla" for="fn">First Name</label><input class="fi" type="text" id="fn" placeholder="John" required></div>
+            <div class="fg"><label class="fla" for="ln">Last Name</label><input class="fi" type="text" id="ln" placeholder="Smith" required></div>
+          </div>
+          <div class="fg"><label class="fla" for="fe">Business Email</label><input class="fi" type="email" id="fe" placeholder="john@company.com" required></div>
+          <div class="fg"><label class="fla" for="fc">Company</label><input class="fi" type="text" id="fc" placeholder="Your Organisation"></div>
+          <div class="fg">
+            <label class="fla" for="fsv">Service Interest</label>
+            <select class="fsel" id="fsv">
+              <option value="">Select a service area</option>
+              <option>Managed Service Delivery (MSD)</option>
+              <option>Finance &amp; Revenue Operations</option>
+              <option>Compliance &amp; Documentation Operations</option>
+              <option>Business Support &amp; Administrative Operations</option>
+              <option>Healthcare Revenue Cycle Management</option>
+              <option>Surveillance &amp; Remote Monitoring</option>
+              <option>Other / General Enquiry</option>
+            </select>
+          </div>
+          <div class="fg"><label class="fla" for="fm">Your Requirements</label><textarea class="fta" id="fm" placeholder="Briefly describe your operational environment and what you're looking to achieve..."></textarea></div>
+          <button type="submit" class="btn bb fsubm">Submit Enquiry &rarr;</button>
+          <p class="fno">We respond within 1&ndash;2 business days.</p>
+          <p class="fprivacy">&#128274; Your information is kept strictly confidential and will never be shared with third parties.</p>
+        </form>
+        <div class="fsu" id="fsucc">
+          <div class="fsui">&#10003;</div>
+          <h3 class="fsut">Enquiry Received</h3>
+          <p class="fsub">Thank you. Our team will review your requirements and be in touch within 1&ndash;2 business days.</p>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</section>
+<footer class="foot">
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <img src="logo W.png" alt="Safesense Tech" class="fli">
+        <div class="ft-brand-text">
+          <div class="fb2">Safesense Tech</div>
+          <div class="fsu2">Services Pvt Ltd</div>
+        </div>
+      </div>
+      <nav class="ft-links">
+        <a href="index.html#about">About</a><span class="ft-links-sep"></span>
+        <a href="index.html#services">Services</a><span class="ft-links-sep"></span>
+        <a href="industries.html">Industries</a><span class="ft-links-sep"></span>
+        <a href="team.html">Team</a><span class="ft-links-sep"></span>
+        <a href="index.html#why">Why Us</a><span class="ft-links-sep"></span>
+        <a href="index.html#contact">Contact</a><span class="ft-links-sep"></span>
+        <a href="index.html#services" style="color:rgba(16,185,129,.85)">MSD</a><span class="ft-links-sep"></span>
+        <a href="index.html#services" style="color:rgba(16,185,129,.85)">Surveillance</a>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <p class="fco">&copy; 2025 Safesense Tech Services Pvt Ltd. All rights reserved.</p>
+      <ul class="fle"><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul>
+    </div>
+  </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){
+
+  /* nav scroll */
+  var navEl=document.getElementById('nav');
+  if(navEl)window.addEventListener('scroll',function(){navEl.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+
+  /* NAV SECTION-AWARE COLOUR */
+  (function(){
+    var navEl2=document.getElementById('nav');
+    var logoEl=document.getElementById('navLogo');
+    if(!navEl2)return;
+    var currentTheme='';
+    function updateNavTheme(){
+      var navMid=navEl2.getBoundingClientRect().top+navEl2.offsetHeight/2;
+      var zones=document.querySelectorAll('.hero,.phero,section');
+      var active=null;
+      zones.forEach(function(el){
+        var r=el.getBoundingClientRect();
+        if(r.top<=navMid&&r.bottom>navMid)active=el;
+      });
+      var theme='light';
+      if(!active){theme='dark';}
+      else{
+        var cls=active.className||'';
+        if(cls.indexOf('hero')>-1||cls.indexOf('dark')>-1||cls.indexOf('phero')>-1)theme='dark';
+        else theme='light';
+      }
+      if(theme===currentTheme)return;
+      currentTheme=theme;
+      if(theme==='light'){
+        navEl2.classList.add('on-light');
+        if(logoEl)logoEl.src='logo T.png';
+      }else{
+        navEl2.classList.remove('on-light');
+        if(logoEl)logoEl.src='logo W.png';
+      }
+    }
+    window.addEventListener('scroll',updateNavTheme,{passive:true});
+    window.addEventListener('resize',updateNavTheme,{passive:true});
+    setTimeout(updateNavTheme,50);
+  })();
+
+  /* mouse spotlight on all interactive cards */
+  document.querySelectorAll('.step,.acc-item,.ind-sector,.tm-card,.gp,.fb,.svc-panel').forEach(function(c){
+    c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');c.style.setProperty('--my',((e.clientY-r.top)/r.height*100).toFixed(1)+'%');});
+  });
+  /* universal accordion — hover to open, click also works */
+  function openAccItem(btn, group){
+    var body = btn.nextElementSibling;
+    if(group){
+      document.querySelectorAll('[data-acc-group="'+group+'"] .acc-btn.open').forEach(function(b){
+        if(b !== btn){
+          b.classList.remove('open');
+          b.setAttribute('aria-expanded','false');
+          b.nextElementSibling.classList.remove('open');
+        }
+      });
+    }
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+    body.classList.add('open');
+  }
+  function closeAccItem(btn){
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    btn.nextElementSibling.classList.remove('open');
+  }
+  function toggleAcc(btn,group){
+    var isOpen = btn.classList.contains('open');
+    if(group){
+      document.querySelectorAll('[data-acc-group="'+group+'"] .acc-btn.open').forEach(function(b){
+        b.classList.remove('open');b.setAttribute('aria-expanded','false');b.nextElementSibling.classList.remove('open');
+      });
+    }
+    if(!isOpen){ btn.classList.add('open');btn.setAttribute('aria-expanded','true');btn.nextElementSibling.classList.add('open'); }
+    else{ btn.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.nextElementSibling.classList.remove('open'); }
+  }
+  window.toggleAcc = toggleAcc;
+
+  /* wire hover on every acc-item */
+  document.querySelectorAll('.acc-item').forEach(function(item){
+    var btn = item.querySelector('.acc-btn');
+    if(!btn) return;
+    var group = (item.closest('[data-acc-group]') || {}).dataset && item.closest('[data-acc-group]').dataset.accGroup;
+    var closeTimer = null;
+    item.addEventListener('mouseenter', function(){
+      clearTimeout(closeTimer);
+      openAccItem(btn, group);
+    });
+    item.addEventListener('mouseleave', function(){
+      closeTimer = setTimeout(function(){ closeAccItem(btn); }, 180);
+    });
+  });
+  /* industries accordion */
+  function toggleInd(btn){
+    var body=btn.nextElementSibling,isOpen=btn.classList.contains('open');
+    document.querySelectorAll('.ind-btn.open').forEach(function(b){b.classList.remove('open');b.setAttribute('aria-expanded','false');b.nextElementSibling.classList.remove('open');});
+    if(!isOpen){btn.classList.add('open');btn.setAttribute('aria-expanded','true');body.classList.add('open');}
+  }
+  window.toggleInd=toggleInd;
+  /* team accordion */
+  function toggleTeamAcc(btn){
+    var body=btn.nextElementSibling,isOpen=btn.classList.contains('open');
+    document.querySelectorAll('.tm-acc-btn.open').forEach(function(b){b.classList.remove('open');b.setAttribute('aria-expanded','false');b.nextElementSibling.classList.remove('open');var l=b.querySelector('.tm-btn-label');if(l)l.textContent='View Profile';});
+    if(!isOpen){btn.classList.add('open');btn.setAttribute('aria-expanded','true');body.classList.add('open');var l=btn.querySelector('.tm-btn-label');if(l)l.textContent='Hide Profile';}
+  }
+  window.toggleTeamAcc=toggleTeamAcc;
+
+  /* nav desktop dropdowns — ALL hover, with fade+slide animation */
+  var dropPairs=[['svcDrop','svcBtn','svcMenu'],['indDrop','indBtn','indMenu']];
+  dropPairs.forEach(function(pair){
+    var wrap=document.getElementById(pair[0]),btn=document.getElementById(pair[1]),menu=document.getElementById(pair[2]);
+    if(!wrap||!btn||!menu)return;
+    var closeTimer=null;
+    function openDrop(){
+      clearTimeout(closeTimer);
+      document.querySelectorAll('.ndrop-menu.open').forEach(function(m){if(m!==menu){m.classList.remove('open');}});
+      document.querySelectorAll('.ndrop-btn.open').forEach(function(b){if(b!==btn){b.classList.remove('open');b.setAttribute('aria-expanded','false');}});
+      menu.classList.add('open');btn.classList.add('open');btn.setAttribute('aria-expanded','true');
+    }
+    function scheduleClose(){
+      closeTimer=setTimeout(function(){
+        menu.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');
+      },120);
+    }
+    wrap.addEventListener('mouseenter',openDrop);
+    wrap.addEventListener('mouseleave',scheduleClose);
+    menu.addEventListener('mouseenter',function(){clearTimeout(closeTimer);});
+    menu.addEventListener('mouseleave',scheduleClose);
+  });
+  document.addEventListener('click',function(){
+    document.querySelectorAll('.ndrop-menu.open').forEach(function(m){m.classList.remove('open');});
+    document.querySelectorAll('.ndrop-btn.open').forEach(function(b){b.classList.remove('open');b.setAttribute('aria-expanded','false');});
+  });
+
+  /* mobile dropdowns */
+  document.querySelectorAll('.mm-drop-btn').forEach(function(btn){btn.addEventListener('click',function(){this.nextElementSibling.classList.toggle('open');});});
+  /* mobile menu */
+  var burg=document.getElementById('burger'),mobileMenu=document.getElementById('mm'),mOpen=false;
+  function tog(o){mOpen=o;if(!burg)return;burg.setAttribute('aria-expanded',String(o));mobileMenu.classList.toggle('open',o);var s=burg.querySelectorAll('span');if(o){s[0].style.transform='translateY(6.5px) rotate(45deg)';s[1].style.opacity='0';s[2].style.transform='translateY(-6.5px) rotate(-45deg)';}else{s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';}}
+  if(burg){burg.addEventListener('click',function(){tog(!mOpen);});mobileMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){tog(false);});});}
+  /* scroll reveal */
+  if('IntersectionObserver' in window){var els=document.querySelectorAll('.rv');els.forEach(function(el){el.classList.add('hidden');});var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('hidden');e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.06,rootMargin:'0px 0px -24px 0px'});els.forEach(function(el){obs.observe(el);});}
+
+  /* contact form */
+  var form=document.getElementById('theForm');
+  if(form){form.addEventListener('submit',function(e){e.preventDefault();var fn=document.getElementById('fn').value.trim(),fe=document.getElementById('fe').value.trim();if(!fn||!fe){return;}var succ=document.getElementById('fsucc');if(succ){form.style.display='none';succ.classList.add('show');}});}
+})();
+</script>
+</body>
+</html>

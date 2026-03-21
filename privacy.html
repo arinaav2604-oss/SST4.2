@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Safesense Tech Services Pvt Ltd</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#1E293B;background:#fff;line-height:1.65}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+:root{--navy:#001A3F;--accent:#0047AB;--accentH:#1a5fc8;--green:#10B981;--muted:#64748B;--border:#C8D6DD;--surface:#F4F7F9;--white:#fff;--nav-h:70px;--max:1180px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:32px}
+.sec{padding-block:96px}
+.surf{background:var(--surface)}
+.dark{background:var(--navy);color:var(--white)}
+.ey{font-family:monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.ey::before{content:'';width:26px;height:1px;background:var(--accent);flex-shrink:0}
+.eyl{color:#7ab3f0}.eyl::before{background:#7ab3f0}
+.h2{font-size:clamp(22px,3.5vw,40px);font-weight:800;line-height:1.2;color:var(--navy);margin-bottom:18px}
+.dark .h2{color:#fff}
+.lead{font-size:16px;color:var(--muted);line-height:1.8;max-width:580px}
+.dark .lead{color:#94afc4}
+.bar{width:44px;height:3px;background:var(--accent);margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border:none;border-radius:4px;font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;white-space:nowrap}
+.bb{background:var(--accent);color:#fff}
+.bb:hover{background:var(--accentH);transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,71,171,.3)}
+.bg-btn{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.bg-btn:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+/* NAV */
+.nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:200;height:var(--nav-h);width:calc(100% - 48px);max-width:calc(var(--max) + 32px);border-radius:16px;background:rgba(0,20,55,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 4px 32px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.07);transition:top .3s,width .3s,border-radius .3s,background .3s}
+.nav.scrolled{top:6px;width:calc(100% - 24px);border-radius:12px;background:rgba(0,15,45,.95)}
+.ni{max-width:var(--max);margin-inline:auto;padding-inline:28px;height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nl{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nl img{height:38px;width:auto;display:block}
+.nlt{display:flex;flex-direction:column;gap:1px}
+/* NAV COLOUR STATES */
+.nln{font-size:14px;font-weight:800;color:#fff;letter-spacing:.06em;text-transform:uppercase;line-height:1;white-space:nowrap;transition:color .35s}
+.nln span{color:var(--green);transition:color .35s}
+.nls{font-family:monospace;font-size:7px;letter-spacing:.16em;color:rgba(255,255,255,.36);text-transform:uppercase;white-space:nowrap;transition:color .35s}
+.nlinks>li>a,.nlinks>li>button.ndrop-btn{font-size:11.5px;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;position:relative;transition:color .35s,background .2s;padding:6px 9px;border-radius:3px;background:none;border:none;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:4px}
+.nlinks>li>a:hover,.nlinks>li>button.ndrop-btn:hover{color:#fff}
+.nlinks>li>a::after{content:'';position:absolute;bottom:0;left:9px;width:0;height:1.5px;background:var(--green);transition:width .25s}
+.nlinks>li>a:hover::after{width:calc(100% - 18px)}
+.nlinks>li>a.active{color:#fff}.nlinks>li>a.active::after{width:calc(100% - 18px)}
+.burg span{display:block;width:23px;height:1.5px;background:#fff;transition:all .3s}
+.nav.on-light{background:rgba(255,255,255,.97) !important;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 4px 28px rgba(0,0,0,.12),0 0 0 1px rgba(0,0,0,.08)}
+.nav.on-light .nln{color:var(--navy)}
+.nav.on-light .nln span{color:var(--accent)}
+.nav.on-light .nls{color:rgba(0,26,63,.4)}
+.nav.on-light .nlinks>li>a,.nav.on-light .nlinks>li>button.ndrop-btn{color:rgba(0,26,63,.65)}
+.nav.on-light .nlinks>li>a:hover,.nav.on-light .nlinks>li>button.ndrop-btn:hover{color:var(--navy)}
+.nav.on-light .nlinks>li>a::after{background:var(--accent)}
+.nav.on-light .burg span{background:var(--navy)}
+.nav.on-light .btn.bb{background:var(--accent);color:#fff}
+.nav-logo{height:48px;width:auto;display:block}
+.nls{font-family:monospace;font-size:7px;letter-spacing:.16em;color:rgba(255,255,255,.36);text-transform:uppercase;white-space:nowrap}
+.nr{display:flex;align-items:center;gap:16px;flex-shrink:0}
+.nlinks{display:flex;align-items:center;gap:2px;list-style:none}
+.nlinks>li>a,.nlinks>li>button.ndrop-btn{font-size:11.5px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;position:relative;transition:color .2s;padding:6px 9px;border-radius:3px;background:none;border:none;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:4px}
+.nlinks>li>a::after{content:'';position:absolute;bottom:0;left:9px;width:0;height:1.5px;background:var(--green);transition:width .25s}
+.nlinks>li>a:hover,.nlinks>li>button.ndrop-btn:hover{color:#fff}
+.nlinks>li>a:hover::after{width:calc(100% - 18px)}
+.nlinks>li>a.active{color:#fff}.nlinks>li>a.active::after{width:calc(100% - 18px)}
+.ndrop{position:relative}
+.ndrop-btn svg{transition:transform .25s}
+.ndrop-btn.open svg{transform:rotate(180deg)}
+.ndrop-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;width:270px;background:#fff;border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.18);overflow:hidden;z-index:300;padding:6px 0}
+.ndrop-menu.open{display:block}
+.ndrop-menu a{display:flex;align-items:flex-start;gap:10px;padding:12px 18px;transition:background .15s}
+.ndrop-menu a:hover{background:var(--surface)}
+.dm-icon{font-size:15px;flex-shrink:0;margin-top:2px}
+.dm-text{display:flex;flex-direction:column;gap:2px}
+.dm-title{font-weight:700;font-size:12px;color:var(--navy);letter-spacing:.02em}
+.dm-sub{font-size:10.5px;color:var(--muted);line-height:1.4}
+.ndrop-div{height:1px;background:var(--border);margin:3px 0}
+.ncta{padding:9px 18px;font-size:11px}
+.burg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.burg span{display:block;width:23px;height:1.5px;background:#fff;transition:all .3s}
+.mm{display:none;position:fixed;top:calc(var(--nav-h) + 20px);left:24px;right:24px;border-radius:12px;z-index:199;background:rgba(0,26,63,.98);padding:20px 32px 32px;flex-direction:column;gap:2px;max-height:calc(100vh - var(--nav-h));overflow-y:auto}
+.mm.open{display:flex}
+.mm a,.mm button.mm-drop-btn{display:flex;justify-content:space-between;align-items:center;padding:13px 0;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.72);border-bottom:1px solid rgba(255,255,255,.05);transition:color .2s;background:none;border-top:none;border-left:none;border-right:none;text-align:left;width:100%;font-family:inherit;cursor:pointer}
+.mm a:hover,.mm button.mm-drop-btn:hover{color:#fff}
+.mm-sub{display:none;flex-direction:column;padding-left:14px}
+.mm-sub.open{display:flex}
+.mm-sub a{font-size:11.5px;letter-spacing:.04em;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.03);color:rgba(255,255,255,.5)}
+/* FOOTER */
+.foot{background:#000d1f;padding-block:40px 20px}
+.ft-top{display:flex;align-items:center;justify-content:space-between;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+.ft-brand{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.fli{height:32px;object-fit:contain;display:block}
+.fb2{font-size:13px;font-weight:800;color:#fff;letter-spacing:.05em;text-transform:uppercase;line-height:1}
+.fb2 span{color:var(--green)}
+.fsu2{font-family:monospace;font-size:6.5px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.26);margin-top:2px}
+.ft-links{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.ft-links a{font-size:11.5px;color:rgba(255,255,255,.45);transition:color .2s,background .2s;padding:5px 12px;border-radius:20px;white-space:nowrap}
+.ft-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.ft-links-sep{width:1px;height:14px;background:rgba(255,255,255,.1);flex-shrink:0;margin:0 2px}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:20px}
+.fco{font-size:11px;color:rgba(255,255,255,.2)}
+.fle{display:flex;gap:4px;list-style:none}
+.fle a{font-size:11px;color:rgba(255,255,255,.2);transition:color .2s,background .2s;padding:4px 10px;border-radius:20px}
+.fle a:hover{color:rgba(255,255,255,.6);background:rgba(255,255,255,.06)}
+/* REVEAL */
+.rv{transition:opacity .7s ease,transform .7s ease}
+.rv.hidden{opacity:0;transform:translateY(28px)}
+.rv.visible{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.22s}.d3{transition-delay:.32s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+/* UNIVERSAL ACCORDION - identical style for ALL sections */
+.acc-list{display:flex;flex-direction:column;gap:10px}
+.acc-item{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff;position:relative}
+.acc-item::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,71,171,.08) 0%,transparent 65%);opacity:0;transition:opacity .4s;pointer-events:none;z-index:0}
+.acc-item:hover::before{opacity:1}
+.acc-item.dark-acc{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
+.acc-item.dark-acc::before{background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,71,171,.28) 0%,transparent 65%)}
+.acc-btn{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 22px;background:none;border:none;cursor:pointer;font-family:inherit;text-align:left;gap:14px;transition:background .25s;position:relative;z-index:1}
+.acc-btn:hover{background:rgba(0,71,171,.05)}
+.acc-item.dark-acc .acc-btn:hover{background:rgba(255,255,255,.07)}
+.acc-btn.open{background:rgba(0,71,171,.05)}
+.acc-item.dark-acc .acc-btn.open{background:rgba(255,255,255,.07)}
+.acc-left{display:flex;align-items:center;gap:14px;flex:1;min-width:0}
+.acc-icon{font-size:20px;flex-shrink:0;width:32px;text-align:center}
+.acc-title{font-size:14px;font-weight:700;color:var(--navy);line-height:1.3;flex:1;transition:color .25s}
+.acc-item.dark-acc .acc-title{color:#e2eaf0}
+.acc-btn:hover .acc-title,.acc-btn.open .acc-title{color:var(--accent)}
+.acc-item.dark-acc .acc-btn:hover .acc-title,.acc-item.dark-acc .acc-btn.open .acc-title{color:#7ab3f0}
+.acc-chevron{flex-shrink:0;color:var(--accent);transition:transform .3s,color .3s}
+.acc-item.dark-acc .acc-chevron{color:#7ab3f0}
+.acc-btn.open .acc-chevron{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .38s ease}
+.acc-body.open{max-height:900px}
+.acc-inner{padding:14px 22px 20px 68px;font-size:13.5px;color:var(--muted);line-height:1.75;border-top:1px solid var(--border);position:relative;z-index:1}
+.acc-item.dark-acc .acc-inner{color:rgba(255,255,255,.78);border-top-color:rgba(255,255,255,.1)}
+.acc-inner p{margin-bottom:10px}
+.acc-inner p:last-child{margin-bottom:0}
+.acc-inner ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:8px}
+.acc-inner ul li{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--muted);line-height:1.5}
+.acc-inner ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:5px}
+.acc-item.dark-acc .acc-inner ul li{color:rgba(255,255,255,.72)}
+.acc-item.dark-acc .acc-inner ul li::before{background:var(--green)}
+.acc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.acc-tag{background:var(--surface);border:1px solid var(--border);border-radius:3px;font-family:monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:3px 9px}
+.acc-item.dark-acc .acc-tag{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);color:rgba(217,227,232,.5)}
+.phero{background:var(--navy);padding-top:calc(var(--nav-h) + 72px);padding-bottom:60px;position:relative;overflow:hidden}
+.phero-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:80px 80px;pointer-events:none}
+.phero-shape{position:absolute;right:-60px;top:0;width:50%;height:100%;background:linear-gradient(135deg,rgba(0,71,171,.14),transparent);clip-path:polygon(16% 0,100% 0,100% 100%,0% 100%);pointer-events:none}
+.phero-ring{position:absolute;right:60px;bottom:-60px;width:280px;height:280px;border:1px solid rgba(16,185,129,.15);border-radius:50%;pointer-events:none}
+.phero-body{position:relative;z-index:2}
+.page-title{font-size:clamp(28px,5vw,52px);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.015em;margin-bottom:16px}
+.page-title em{font-style:normal;color:var(--green)}
+.page-meta{font-family:monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-top:12px}
+.policy-body{max-width:780px;margin:0 auto;padding:72px 32px}
+.policy-body h2{font-size:19px;font-weight:800;color:var(--navy);margin:40px 0 12px;padding-top:28px;border-top:1px solid var(--border)}
+.policy-body h2:first-of-type{border-top:none;margin-top:0;padding-top:0}
+.policy-body p{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:14px}
+.policy-body ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin:0 0 18px 0}
+.policy-body ul li{font-size:14px;color:var(--muted);line-height:1.7;display:flex;align-items:flex-start;gap:10px}
+.policy-body ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:8px}
+.policy-body a{color:var(--accent);text-decoration:underline}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:40px;transition:gap .2s;text-decoration:none!important}
+.back-link:hover{gap:12px}
+@media(max-width:900px){:root{--nav-h:64px}.nlinks,.ncta{display:none}.nlt{display:flex}.burg{display:flex}.policy-body{padding:48px 16px}}
+@media(max-width:560px){.wrap{padding-inline:16px}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="ni">
+    <a href="index.html" class="nl">
+      <img src="logo W.png" alt="Safesense Tech" id="navLogo" class="nav-logo">
+      <div class="nlt"><span class="nln">Safesense <span>Tech</span></span><span class="nls">Services Pvt Ltd</span></div>
+    </a>
+    <div class="nr">
+      <ul class="nlinks">
+        <li><a href="index.html#about">About</a></li>
+        <li class="ndrop" id="svcDrop">
+          <button class="ndrop-btn" id="svcBtn" aria-expanded="false">Services <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="ndrop-menu" id="svcMenu">
+            <a href="index.html#services"><span class="dm-icon">&#127959;&#65039;</span><span class="dm-text"><span class="dm-title">Managed Service Delivery</span><span class="dm-sub">Finance, Compliance, Admin, Healthcare</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="index.html#services"><span class="dm-icon">&#128225;</span><span class="dm-text"><span class="dm-title">Surveillance &amp; Monitoring</span><span class="dm-sub">24/7 Control Room &amp; Escalation</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="index.html#services"><span class="dm-icon">&#128200;</span><span class="dm-text"><span class="dm-title">Finance &amp; Revenue Ops</span><span class="dm-sub">Offshore financial process management</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="index.html#services"><span class="dm-icon">&#128203;</span><span class="dm-text"><span class="dm-title">Compliance &amp; Documentation</span><span class="dm-sub">Regulated environment specialists</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="index.html#services"><span class="dm-icon">&#127973;</span><span class="dm-text"><span class="dm-title">Healthcare Revenue Cycle</span><span class="dm-sub">Specialised RCM management</span></span></a>
+          </div>
+        </li>
+        <li class="ndrop" id="indDrop">
+          <button class="ndrop-btn" id="indBtn" aria-expanded="false">Industries <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="ndrop-menu" id="indMenu">
+            <a href="industries.html#fin"><span class="dm-icon">&#127970;</span><span class="dm-text"><span class="dm-title">Financial Services &amp; FinTech</span><span class="dm-sub">Revenue ops, compliance, admin</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="industries.html#hc"><span class="dm-icon">&#127973;</span><span class="dm-text"><span class="dm-title">Healthcare Practices</span><span class="dm-sub">RCM, documentation, admin</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="industries.html#ps"><span class="dm-icon">&#128188;</span><span class="dm-text"><span class="dm-title">Professional Services</span><span class="dm-sub">Back-office &amp; support operations</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="industries.html#sec"><span class="dm-icon">&#128737;&#65039;</span><span class="dm-text"><span class="dm-title">Security &amp; Infrastructure</span><span class="dm-sub">Surveillance &amp; remote monitoring</span></span></a>
+            <div class="ndrop-div"></div>
+            <a href="industries.html#ec"><span class="dm-icon">&#128230;</span><span class="dm-text"><span class="dm-title">E-Commerce &amp; Growth Ventures</span><span class="dm-sub">Scalable offshore operations</span></span></a>
+          </div>
+        </li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="index.html#why">Why Us</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn bb ncta">Begin Transition</a>
+      <button class="burg" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<nav class="mm" id="mm">
+  <a href="index.html#about">About</a>
+  <button class="mm-drop-btn">Services <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+  <div class="mm-sub">
+    <a href="index.html#services">Managed Service Delivery</a>
+    <a href="index.html#services">Surveillance &amp; Monitoring</a>
+    <a href="index.html#services">Finance &amp; Revenue Ops</a>
+    <a href="index.html#services">Compliance &amp; Documentation</a>
+    <a href="index.html#services">Healthcare Revenue Cycle</a>
+  </div>
+  <button class="mm-drop-btn">Industries <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+  <div class="mm-sub">
+    <a href="industries.html#fin">Financial Services &amp; FinTech</a>
+    <a href="industries.html#hc">Healthcare Practices</a>
+    <a href="industries.html#ps">Professional Services</a>
+    <a href="industries.html#sec">Security &amp; Infrastructure</a>
+    <a href="industries.html#ec">E-Commerce &amp; Growth</a>
+  </div>
+  <a href="team.html">Team</a>
+  <a href="index.html#why">Why Us</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+<div class="phero">
+  <div class="phero-bg"></div><div class="phero-shape"></div><div class="phero-ring"></div>
+  <div class="wrap">
+    <div class="phero-body" style="animation:fadeUp .7s ease both">
+      <div class="ey eyl">Legal &amp; Compliance</div>
+      <h1 class="page-title">Privacy <em>Policy</em></h1>
+      <p class="page-meta">Last updated: January 2025</p>
+    </div>
+  </div>
+</div>
+<div class="policy-body">
+  <a href="index.html" class="back-link">&#8592; Back to Home</a>
+  <h2>1. Introduction</h2>
+  <p>Safesense Tech Services Pvt Ltd ("Safesense Tech", "we", "us", or "our") is committed to protecting the privacy and confidentiality of all information entrusted to us. This Privacy Policy outlines how we collect, use, store, and protect personal and business information obtained through our website and service delivery operations.</p>
+  <p>By accessing our website or engaging our services, you acknowledge and agree to the practices described in this policy.</p>
+  <h2>2. Information We Collect</h2>
+  <p>We may collect the following categories of information:</p>
+  <ul>
+    <li>Contact information including name, business email address, phone number, and company name submitted via our enquiry form</li>
+    <li>Service requirements and operational information shared during engagement discussions</li>
+    <li>Technical data including browser type, IP address, and pages visited, collected automatically when you access our website</li>
+    <li>Communication records from emails, calls, or messages exchanged with our team</li>
+  </ul>
+  <h2>3. How We Use Your Information</h2>
+  <p>Information collected is used exclusively for legitimate operational and business purposes, including:</p>
+  <ul>
+    <li>Responding to enquiries and service requests submitted through our website</li>
+    <li>Delivering and managing agreed service engagements</li>
+    <li>Communicating updates relevant to your engagement or service relationship</li>
+    <li>Improving our website and service delivery based on aggregated, anonymised data</li>
+    <li>Complying with applicable legal and regulatory obligations</li>
+  </ul>
+  <h2>4. Data Confidentiality &amp; Security</h2>
+  <p>Safesense Tech operates under strict data governance protocols. All personal and business information is handled with the same structured controls applied to our client service environments:</p>
+  <ul>
+    <li>Role-based access controls limit data access to authorised personnel only</li>
+    <li>Defined data handling protocols govern how information is stored, processed, and disposed of</li>
+    <li>We do not sell, rent, or share your information with third parties for marketing purposes</li>
+    <li>Data shared with third-party service providers is governed by appropriate data processing agreements</li>
+  </ul>
+  <h2>5. Data Retention</h2>
+  <p>We retain personal information only for as long as necessary to fulfil the purposes for which it was collected, or as required by applicable law. Enquiry data from non-clients is retained for a reasonable period to allow follow-up, after which it is securely deleted.</p>
+  <h2>6. Your Rights</h2>
+  <p>Depending on your jurisdiction, you may have the right to access, correct, or request deletion of personal information we hold about you. To exercise any of these rights, please contact us using the details below.</p>
+  <h2>7. Cookies</h2>
+  <p>Our website uses minimal technical cookies required for basic functionality. We do not use tracking or advertising cookies. You may configure your browser to decline cookies, though this may affect certain website features.</p>
+  <h2>8. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. Any material changes will be reflected on this page with an updated revision date. Continued use of our website after changes constitutes acceptance of the revised policy.</p>
+  <h2>9. Contact</h2>
+  <p>For any questions regarding this Privacy Policy or how your information is handled, please contact us:</p>
+  <ul>
+    <li>Email: <a href="/cdn-cgi/l/email-protection#6c04090000032c1f0d0a091f09021f0918090f04420f0301"><span class="__cf_email__" data-cfemail="1f777a7373705f6c7e797a6c7a716c7a6b7a7c77317c7072">[email&#160;protected]</span></a></li>
+    <li>Website: <a href="index.html#contact">Contact Form</a></li>
+  </ul>
+</div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <img src="logo W.png" alt="Safesense Tech" class="fli">
+        <div class="ft-brand-text">
+          <div class="fb2">Safesense <span>Tech</span></div>
+          <div class="fsu2">Services Pvt Ltd</div>
+        </div>
+      </div>
+      <nav class="ft-links">
+        <a href="index.html#about">About</a><span class="ft-links-sep"></span>
+        <a href="index.html#services">Services</a><span class="ft-links-sep"></span>
+        <a href="industries.html">Industries</a><span class="ft-links-sep"></span>
+        <a href="team.html">Team</a><span class="ft-links-sep"></span>
+        <a href="index.html#why">Why Us</a><span class="ft-links-sep"></span>
+        <a href="index.html#contact">Contact</a><span class="ft-links-sep"></span>
+        <a href="index.html#se,185,129,.85)">Surveillance</a>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <p class="fco">&copy; 2025 Safesense Tech Services Pvt Ltd. All rights reserved.</p>
+      <ul class="fle"><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+    img.addEventListener('load',function(){if(img.naturalWidth===0){img.style.display='none';fb.style.display='flex';}});
+  });
+  /* nav scroll */
+  var navEl=document.getElementById('nav');
+  if(navEl)window.addEventListener('scroll',function(){navEl.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+  /* mouse spotlight on all interactive cards */
+  document.querySelectorAll('.step,.acc-item,.ind-sector,.tm-card').forEach(function(c){
+    c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');c.style.setProperty('--my',((e.clientY-r.top)/r.height*100).toFixed(1)+'%');});
+  });
+  /* universal accordion */
+  function toggleAcc(btn,group){
+    var body=btn.nextElementSibling,isOpen=btn.classList.contains('open');
+    if(group){document.querySelectorAll('[data-acc-group="'+group+'"] .acc-btn.open').forEach(function(b){b.classList.remove('open');b.setAttribute('aria-expanded','false');b.nextElementSibling.classList.remove('open');});}
+    if(!isOpen){btn.classList.add('open');btn.setAttribute('aria-expanded','true');body.classList.add('open');}
+    else{btn.classList.remove('open');btn.setAttribute('aria-expanded','false');body.classList.remove('open');}
+  }
+  window.toggleAcc=toggleAcc;
+  /* industries accordion */
+  function toggleInd(btn){
+    var body=btn.nextElementSibling,isOpen=btn.classList.contains('open');
+    document.querySelectorAll('.ind-btn.open').forEach(function(b){b.classList.remove('open');b.setAttribute('aria-expanded','false');b.nextElementSibling.classList.remove('open');});
+    if(!isOpen){btn.classList.add('open');btn.setAttribute('aria-expanded','true');body.classList.add('open');}
+  }
+  window.toggleInd=toggleInd;
+  /* team accordion */
+  function toggleTeamAcc(btn){
+    var body=btn.nextElementSibling,isOpen=btn.classList.contains('open');
+    document.querySelectorAll('.tm-acc-btn.open').forEach(function(b){b.classList.remove('open');b.setAttribute('aria-expanded','false');b.nextElementSibling.classList.remove('open');var l=b.querySelector('.tm-btn-label');if(l)l.textContent='View Profile';});
+    if(!isOpen){btn.classList.add('open');btn.setAttribute('aria-expanded','true');body.classList.add('open');var l=btn.querySelector('.tm-btn-label');if(l)l.textContent='Hide Profile';}
+  }
+  window.toggleTeamAcc=toggleTeamAcc;
+  /* nav desktop dropdowns */
+  ['svcBtn','indBtn'].forEach(function(id){
+    var btn=document.getElementById(id);if(!btn)return;
+    var menu=document.getElementById(id==='svcBtn'?'svcMenu':'indMenu');
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();var o=menu.classList.contains('open');
+      document.querySelectorAll('.ndrop-menu.open').forEach(function(m){m.classList.remove('open');});
+      document.querySelectorAll('.ndrop-btn.open').forEach(function(b){b.classList.remove('open');b.setAttribute('aria-expanded','false');});
+      if(!o){menu.classList.add('open');btn.classList.add('open');btn.setAttribute('aria-expanded','true');}
+    });
+  });
+  document.addEventListener('click',function(){
+    document.querySelectorAll('.ndrop-menu.open').forEach(function(m){m.classList.remove('open');});
+    document.querySelectorAll('.ndrop-btn.open').forEach(function(b){b.classList.remove('open');b.setAttribute('aria-expanded','false');});
+  });
+  document.querySelectorAll('.ndrop-menu').forEach(function(m){m.addEventListener('click',function(e){e.stopPropagation();});});
+  /* mobile dropdowns */
+  document.querySelectorAll('.mm-drop-btn').forEach(function(btn){btn.addEventListener('click',function(){this.nextElementSibling.classList.toggle('open');});});
+  /* mobile menu */
+  var burg=document.getElementById('burger'),mobileMenu=document.getElementById('mm'),mOpen=false;
+  function tog(o){mOpen=o;if(!burg)return;burg.setAttribute('aria-expanded',String(o));mobileMenu.classList.toggle('open',o);var s=burg.querySelectorAll('span');if(o){s[0].style.transform='translateY(6.5px) rotate(45deg)';s[1].style.opacity='0';s[2].style.transform='translateY(-6.5px) rotate(-45deg)';}else{s[0].style.transform='';s[1].style.opacity='';s[2].style.transform='';}}
+  if(burg){burg.addEventListener('click',function(){tog(!mOpen);});mobileMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){tog(false);});});}
+  /* scroll reveal */
+  if('IntersectionObserver' in window){var els=document.querySelectorAll('.rv');els.forEach(function(el){el.classList.add('hidden');});var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('hidden');e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.06,rootMargin:'0px 0px -24px 0px'});els.forEach(function(el){obs.observe(el);});}
+
+  /* NAV SECTION-AWARE COLOUR */
+  (function(){
+    var navEl2=document.getElementById('nav');
+    var logoEl=document.getElementById('navLogo');
+    if(!navEl2)return;
+    var currentTheme='';
+    function updateNavTheme(){
+      var navMid=navEl2.getBoundingClientRect().top+navEl2.offsetHeight/2;
+      var zones=document.querySelectorAll('.phero,section');
+      var active=null;
+      zones.forEach(function(el){
+        var r=el.getBoundingClientRect();
+        if(r.top<=navMid&&r.bottom>navMid)active=el;
+      });
+      var theme='light';
+      if(!active){theme='dark';}
+      else{
+        var cls=active.className||'';
+        if(cls.indexOf('phero')>-1||cls.indexOf('dark')>-1)theme='dark';
+        else theme='light';
+      }
+      if(theme===currentTheme)return;
+      currentTheme=theme;
+      if(theme==='light'){
+        navEl2.classList.add('on-light');
+        if(logoEl)logoEl.src='logo T.png';
+      }else{
+        navEl2.classList.remove('on-light');
+        if(logoEl)logoEl.src='logo W.png';
+      }
+    }
+    window.addEventListener('scroll',updateNavTheme,{passive:true});
+    window.addEventListener('resize',updateNavTheme,{passive:true});
+    setTimeout(updateNavTheme,50);
+  })();
+})();
+</script>
+</body>
+</html>
